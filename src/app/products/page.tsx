@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
@@ -158,7 +158,7 @@ const allProducts = [
 
 const categories = ['全部', '美妆护肤', '家居生活', '时尚配饰', '健康食品', '数码配件', '母婴用品'];
 
-export default function Products() {
+function ProductsContent() {
   const [products, setProducts] = useState(allProducts);
   const [selectedCategory, setSelectedCategory] = useState('全部');
   const [sortBy, setSortBy] = useState('default');
@@ -306,5 +306,13 @@ export default function Products() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function Products() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">加载中...</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }

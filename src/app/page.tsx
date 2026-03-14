@@ -117,6 +117,7 @@ export default function Home() {
                 <Link href="#products" className="text-gray-600 hover:text-[#d4a5a5] transition">产品</Link>
                 <Link href="#categories" className="text-gray-600 hover:text-[#d4a5a5] transition">分类</Link>
                 <Link href="/about" className="text-gray-600 hover:text-[#d4a5a5] transition">关于</Link>
+                <Link href="/contact" className="text-gray-600 hover:text-[#d4a5a5] transition">联系</Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
